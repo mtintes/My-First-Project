@@ -25,8 +25,8 @@
         {
             "atomType": "Rectangle",
             "name": "Rectangle",
-            "x": 0.12633624878522837,
-            "y": 0.40978593272171254,
+            "x": 0.13958333333333334,
+            "y": 0.27802690582959644,
             "uniqueID": 1743640244069,
             "ioValues": [
                 {
@@ -35,7 +35,7 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 10
+                    "ioValue": 19
                 }
             ],
             "description": "Creates a new rectangle."
@@ -57,8 +57,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.25364583333333335,
-            "y": 0.8811659192825112,
+            "x": 0.2114583333333333,
+            "y": 0.9035874439461883,
             "uniqueID": 1743640262696,
             "ioValues": [
                 {
@@ -83,8 +83,8 @@
         {
             "atomType": "Fusion",
             "name": "Fusion",
-            "x": 0.3129251700680272,
-            "y": 0.44648318042813456,
+            "x": 0.34062499999999996,
+            "y": 0.5403587443946188,
             "uniqueID": 1743640268026,
             "ioValues": [
                 {
@@ -94,6 +94,10 @@
                 {
                     "name": "Shape 2",
                     "ioValue": 1743640244069
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1744390869605
                 }
             ],
             "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
@@ -102,8 +106,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.43926141885325565,
-            "y": 0.3486238532110092,
+            "x": 0.43489583333333337,
+            "y": 0.5448430493273543,
             "uniqueID": 1743640281617,
             "ioValues": [
                 {
@@ -226,8 +230,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.209375,
-            "y": 0.6860986547085202,
+            "x": 0.184375,
+            "y": 0.6031390134529148,
             "uniqueID": 1744390869605,
             "ioValues": [
                 {
@@ -240,6 +244,24 @@
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
+        },
+        {
+            "atomType": "Difference",
+            "name": "Difference",
+            "x": 0.3145833333333333,
+            "y": 0.8094170403587444,
+            "uniqueID": 1746129713976,
+            "ioValues": [
+                {
+                    "name": "geometry2",
+                    "ioValue": ""
+                },
+                {
+                    "name": "geometry1",
+                    "ioValue": 1744390748502
+                }
+            ],
+            "description": "Subtracts shape two from shape one."
         }
     ],
     "allConnectors": [
@@ -326,6 +348,20 @@
             "ap2Primary": true,
             "ap1ID": 1744390748502,
             "ap2ID": 1744390869605
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry1",
+            "ap2Primary": false,
+            "ap1ID": 1744390748502,
+            "ap2ID": 1746129713976
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 3",
+            "ap2Primary": false,
+            "ap1ID": 1744390869605,
+            "ap2ID": 1743640268026
         }
     ],
     "unitsKey": "Inches",
