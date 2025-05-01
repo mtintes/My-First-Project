@@ -94,10 +94,6 @@
                 {
                     "name": "Shape 2",
                     "ioValue": 1743640244069
-                },
-                {
-                    "name": "Shape 3",
-                    "ioValue": 1744390869605
                 }
             ],
             "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
@@ -106,8 +102,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.43489583333333337,
-            "y": 0.5448430493273543,
+            "x": 0.43697916666666664,
+            "y": 0.5672645739910314,
             "uniqueID": 1743640281617,
             "ioValues": [
                 {
@@ -174,11 +170,11 @@
             "ioValues": [
                 {
                     "name": "geometry1",
-                    "ioValue": 1743640295397
+                    "ioValue": ""
                 },
                 {
                     "name": "geometry2",
-                    "ioValue": 1743640281617
+                    "ioValue": ""
                 }
             ],
             "description": "The space shared by two shapes."
@@ -216,8 +212,8 @@
         {
             "atomType": "Circle",
             "name": "Circle",
-            "x": 0.08802083333333334,
-            "y": 0.5739910313901345,
+            "x": 0.09739583333333333,
+            "y": 0.5515695067264574,
             "uniqueID": 1744390748502,
             "ioValues": [
                 {
@@ -228,11 +224,29 @@
             "description": "Creates a new circle."
         },
         {
+            "atomType": "Difference",
+            "name": "Difference",
+            "x": 0.5,
+            "y": 0.28475336322869954,
+            "uniqueID": 1746135353014,
+            "ioValues": [
+                {
+                    "name": "geometry2",
+                    "ioValue": 1743640281617
+                },
+                {
+                    "name": "geometry1",
+                    "ioValue": 1746135422066
+                }
+            ],
+            "description": "Subtracts shape two from shape one."
+        },
+        {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.184375,
-            "y": 0.6031390134529148,
-            "uniqueID": 1744390869605,
+            "x": 0.2078125,
+            "y": 0.5560538116591929,
+            "uniqueID": 1746135422066,
             "ioValues": [
                 {
                     "name": "geometry",
@@ -240,28 +254,10 @@
                 },
                 {
                     "name": "height",
-                    "ioValue": -3
+                    "ioValue": 30
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
-        },
-        {
-            "atomType": "Difference",
-            "name": "Difference",
-            "x": 0.3145833333333333,
-            "y": 0.8094170403587444,
-            "uniqueID": 1746129713976,
-            "ioValues": [
-                {
-                    "name": "geometry2",
-                    "ioValue": ""
-                },
-                {
-                    "name": "geometry1",
-                    "ioValue": 1744390748502
-                }
-            ],
-            "description": "Subtracts shape two from shape one."
         }
     ],
     "allConnectors": [
@@ -312,7 +308,7 @@
             "ap2Name": "geometry2",
             "ap2Primary": false,
             "ap1ID": 1743640281617,
-            "ap2ID": 1743640338067
+            "ap2ID": 1746135353014
         },
         {
             "ap1Name": "geometry",
@@ -320,13 +316,6 @@
             "ap2Primary": false,
             "ap1ID": 1743640295397,
             "ap2ID": 1743640319231
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "geometry1",
-            "ap2Primary": false,
-            "ap1ID": 1743640295397,
-            "ap2ID": 1743640338067
         },
         {
             "ap1Name": "geometry",
@@ -347,21 +336,14 @@
             "ap2Name": "geometry",
             "ap2Primary": true,
             "ap1ID": 1744390748502,
-            "ap2ID": 1744390869605
+            "ap2ID": 1746135422066
         },
         {
             "ap1Name": "geometry",
             "ap2Name": "geometry1",
             "ap2Primary": false,
-            "ap1ID": 1744390748502,
-            "ap2ID": 1746129713976
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "Shape 3",
-            "ap2Primary": false,
-            "ap1ID": 1744390869605,
-            "ap2ID": 1743640268026
+            "ap1ID": 1746135422066,
+            "ap2ID": 1746135353014
         }
     ],
     "unitsKey": "Inches",
